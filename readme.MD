@@ -30,7 +30,6 @@ It supports application control, system monitoring, and command execution tasks.
 
    git clone https://github.com/BBhushan1/Rag_Automation
 
-   cd <project-directory>
   
 
 2. **Install Dependencies**:
