@@ -1,89 +1,95 @@
-**RAG-Based Function Execution API**
+# 🤖 RAG-Based Function Execution API
 
-#Overview#
-This project implements a Python-based API service that dynamically retrieves and executes automation functions using RAG. The system processes user prompts, maps them to 
-predefined automation functions, and generates executable Python code for function invocation.
+
+## 📋 Overview
+
+This project implements a Python-based API service that dynamically retrieves and executes automation functions using LLM (Large Language Model) and RAG. The system processes user prompts, 
+maps them to predefined automation functions, and generates executable Python code for function invocation.
 
 The API is built using FastAPI and integrates with FAISS for vector search and Sentence Transformers for embeddings. 
 It supports application control, system monitoring, and command execution tasks.
 
-Features
-Function Registry : Predefined automation functions for common tasks like opening applications, retrieving system stats, and running shell commands.
-RAG Model : Uses FAISS for vector search and Sentence Transformers to retrieve the best-matching function based on user prompts.
-Dynamic Code Generation : Generates structured Python scripts for invoking matched functions, including proper imports, error handling, and modularity.
-Session Memory : Maintains interaction history for context-aware responses.
-API Service : Exposes a REST API endpoint (/execute) for processing user queries and returning executable Python code.
+## ✨ Features
 
-Installation and Setup
-Prerequisites
-Python 3.8 or higher
-Install required dependencies:
-bash
-Copy
-1
-pip install -r requirements.txt
-Steps to Run the Project
-Clone the Repository :
-bash
-Copy
-1
-2
-git clone <your-repo-url>
-cd <project-directory>
-Install Dependencies :
-bash
-Copy
-1
-pip install -r requirements.txt
-Start the FastAPI Server :
-bash
-Copy
-1
-uvicorn main:app --reload
-Access the API Documentation :
-Swagger UI: http://127.0.0.1:8000/docs
-ReDoc: http://127.0.0.1:8000/redoc
-Usage
-API Endpoint
-POST /execute
-Request :
-json
-Copy
-1
-2
-3
-⌄
+- **Function Registry**: Predefined automation functions for common tasks like opening applications, retrieving system stats, and running shell commands
+- **RAG Model**: Uses FAISS for vector search and Sentence Transformers to retrieve the best-matching function based on user prompts
+- **Dynamic Code Generation**: Generates structured Python scripts for invoking matched functions, including proper imports, error handling, and modularity
+- **Session Memory**: Maintains interaction history for context-aware responses
+- **API Service**: Exposes a REST API endpoint (`/execute`) for processing user queries and returning executable Python code
+
+## 🚀 Installation and Setup
+
+### Prerequisites
+
+- Python 3.8 or higher
+- Required dependencies (install via requirements.txt)
+
+### Steps to Run the Project
+
+1. **Clone the Repository**:
+
+   git clone https://github.com/BBhushan1/Rag_Automation
+   cd <project-directory>
+  
+
+2. **Install Dependencies**:
+  
+   pip install -r requirements.txt
+   
+
+3. **Start the FastAPI Server**:
+ 
+   uvicorn main:app --reload
+  
+
+4. **Access the API Documentation**:
+   - Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
+   - ReDoc: [http://127.0.0.1:8000/redoc](http://127.0.0.1:8000/redoc)
+
+## 📘 Usage
+
+### API Endpoint
+
+**POST** `/execute`
+
+#### Request:
+
 {
   "prompt": "Open Google Chrome"
 }
-Response :
-json
-Copy
-1
-2
-3
-4
-⌄
+
+
+#### Response:
+
 {
   "function": "open_chrome",
   "code": "from automation_functions import open_chrome\n\ndef main():\n    try:\n        open_chrome()\n        print(\"Chrome opened successfully.\")\n    except Exception as e:\n        print(f\"Error executing function: {e}\")\n\nif __name__ == \"__main__\":\n    main()"
 }
-Sample Requests and Responses
-"Open Google Chrome"
-open_chrome
-python from automation_functions import open_chrome def main(): try: open_chrome() print("Chrome opened successfully.") except Exception as e: print(f"Error executing function: {e}") if __name__ == "__main__": main()
-"Retrieve CPU usage"
-get_cpu_usage
-python from automation_functions import get_cpu_usage def main(): try: cpu_usage = get_cpu_usage() print(f"CPU Usage: {cpu_usage}%") except Exception as e: print(f"Error executing function: {e}") if __name__ == "__main__": main()
-"Run shell command: dir"
-run_shell_command
-python from automation_functions import run_shell_command def main(): try: result = run_shell_command("dir") print(f"Command executed successfully. Result: {result}") except Exception as e: print(f"Error executing function: {e}") if __name__ == "__main__": main()
-"xyz"
-Error
-json {"detail": "No matching function found for the given prompt."}
 
 
+### Sample Requests and Responses
 
-Optional Enhancements
-Logging and Monitoring : Logs are written to logs/execution.log, logs/rag_engine.log, and logs/session_memory.log for debugging and monitoring.
-Custom User-Defined Functions : Extend the system to support user-uploaded functions (future enhancement).
+| User Prompt | Function Called | Generated Code |
+|-------------|----------------|---------------|
+| "Open Google Chrome" | `open_chrome` | ```python\nfrom automation_functions import open_chrome\n\ndef main():\n    try:\n        open_chrome()\n        print("Chrome opened successfully.")\n    except Exception as e:\n        print(f"Error executing function: {e}")\n\nif __name__ == "__main__":\n    main()``` |
+| "Retrieve CPU usage" | `get_cpu_usage` | ```python\nfrom automation_functions import get_cpu_usage\n\ndef main():\n    try:\n        cpu_usage = get_cpu_usage()\n        print(f"CPU Usage: {cpu_usage}%")\n    except Exception as e:\n        print(f"Error executing function: {e}")\n\nif __name__ == "__main__":\n    main()``` |
+| "Run shell command: dir" | `run_shell_command` | ```python\nfrom automation_functions import run_shell_command\n\ndef main():\n    try:\n        result = run_shell_command("dir")\n        print(f"Command executed successfully. Result: {result}")\n    except Exception as e:\n        print(f"Error executing function: {e}")\n\nif __name__ == "__main__":\n    main()``` |
+| "xyz" | Error | ```json\n{"detail": "No matching function found for the given prompt."}``` |
+
+
+## 📝 Logging and Monitoring
+
+The system writes logs to the following files for debugging and monitoring:
+- `logs/execution.log` - Function execution logs
+- `logs/rag_engine.log` - RAG engine processing logs
+- `logs/session_memory.log` - Session and context tracking logs
+
+
+## 🔮 Future Enhancements
+
+- **Custom User-Defined Functions**: Support for user-uploaded automation functions
+- **Enhanced Error Handling**: More detailed error messages and recovery mechanisms
+- **Performance Optimization**: Caching common requests and optimizing vector search
+- **Authentication and Authorization**: Secure API access with user authentication
+
+
