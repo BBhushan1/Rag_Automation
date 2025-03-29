@@ -1,0 +1,8 @@
+[
+    {"name": "open_chrome", "description": "Opens Google Chrome browser.", "parameters": []},
+    {"name": "open_calculator", "description": "Opens the calculator application.", "parameters": []},
+    {"name": "open_notepad", "description": "Opens the notepad text editor.", "parameters": []},
+    {"name": "get_cpu_usage", "description": "Retrieves the current CPU usage percentage.", "parameters": []},
+    {"name": "get_ram_usage", "description": "Retrieves the current RAM usage percentage.", "parameters": []},
+    {"name": "run_shell_command", "description": "Executes a shell command.", "parameters": ["command"]}
+]

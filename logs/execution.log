@@ -1,0 +1,102 @@
+2025-03-29 16:56:04,024 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-03-29 16:56:06,100 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device: cuda
+2025-03-29 16:56:06,740 - rag_engine - INFO - Loaded metadata for 6 functions.
+2025-03-29 16:58:09,995 - root - INFO - Received request: prompt='open chrome' parameters={}
+2025-03-29 16:58:10,018 - root - INFO - Prompt: open chrome, Function: open_chrome, Parameters: {}
+2025-03-29 16:58:10,018 - memory - INFO - Interaction: {'prompt': 'open chrome', 'function': 'open_chrome', 'parameters': {}, 'timestamp': '2025-03-29T16:58:10.018429'}
+2025-03-29 16:58:10,018 - root - INFO - Generated code: 
+from automation_functions import open_chrome
+
+def main():
+    try:
+        result = open_chrome()
+        if result is not None:
+            print("open_chrome executed successfully. Result: " + str(result))
+        else:
+            print("open_chrome executed successfully.")
+    except Exception as e:
+        print(f"Error executing function: {str(e)}")
+
+if __name__ == "__main__":
+    main()
+
+2025-03-29 16:58:45,664 - root - INFO - Received request: prompt='open google chrome' parameters={}
+2025-03-29 16:58:45,680 - root - INFO - Prompt: open google chrome, Function: open_chrome, Parameters: {}
+2025-03-29 16:58:45,680 - memory - INFO - Interaction: {'prompt': 'open google chrome', 'function': 'open_chrome', 'parameters': {}, 'timestamp': '2025-03-29T16:58:45.680084'}
+2025-03-29 16:58:45,681 - root - INFO - Generated code: 
+from automation_functions import open_chrome
+
+def main():
+    try:
+        result = open_chrome()
+        if result is not None:
+            print("open_chrome executed successfully. Result: " + str(result))
+        else:
+            print("open_chrome executed successfully.")
+    except Exception as e:
+        print(f"Error executing function: {str(e)}")
+
+if __name__ == "__main__":
+    main()
+
+2025-03-29 16:59:15,991 - root - INFO - Received request: prompt='open calculator' parameters={}
+2025-03-29 16:59:16,005 - root - INFO - Prompt: open calculator, Function: open_calculator, Parameters: {}
+2025-03-29 16:59:16,005 - memory - INFO - Interaction: {'prompt': 'open calculator', 'function': 'open_calculator', 'parameters': {}, 'timestamp': '2025-03-29T16:59:16.005781'}
+2025-03-29 16:59:16,006 - root - INFO - Generated code: 
+from automation_functions import open_calculator
+
+def main():
+    try:
+        result = open_calculator()
+        if result is not None:
+            print("open_calculator executed successfully. Result: " + str(result))
+        else:
+            print("open_calculator executed successfully.")
+    except Exception as e:
+        print(f"Error executing function: {str(e)}")
+
+if __name__ == "__main__":
+    main()
+
+2025-03-29 16:59:39,024 - root - INFO - Received request: prompt='xyz' parameters={}
+2025-03-29 16:59:39,039 - rag_engine - WARNING - Poor match for query: xyz
+2025-03-29 16:59:39,040 - root - ERROR - Invalid function retrieved: None
+2025-03-29 16:59:39,040 - root - ERROR - Error: 
+2025-03-29 17:00:03,252 - root - INFO - Received request: prompt='show ram usage' parameters={}
+2025-03-29 17:00:03,267 - root - INFO - Prompt: show ram usage, Function: get_ram_usage, Parameters: {}
+2025-03-29 17:00:03,267 - memory - INFO - Interaction: {'prompt': 'show ram usage', 'function': 'get_ram_usage', 'parameters': {}, 'timestamp': '2025-03-29T17:00:03.267275'}
+2025-03-29 17:00:03,267 - root - INFO - Generated code: 
+from automation_functions import get_ram_usage
+
+def main():
+    try:
+        result = get_ram_usage()
+        if result is not None:
+            print("get_ram_usage executed successfully. Result: " + str(result))
+        else:
+            print("get_ram_usage executed successfully.")
+    except Exception as e:
+        print(f"Error executing function: {str(e)}")
+
+if __name__ == "__main__":
+    main()
+
+2025-03-29 17:00:25,856 - root - INFO - Received request: prompt='show cpu usage' parameters={}
+2025-03-29 17:00:25,871 - root - INFO - Prompt: show cpu usage, Function: get_cpu_usage, Parameters: {}
+2025-03-29 17:00:25,872 - memory - INFO - Interaction: {'prompt': 'show cpu usage', 'function': 'get_cpu_usage', 'parameters': {}, 'timestamp': '2025-03-29T17:00:25.872005'}
+2025-03-29 17:00:25,873 - root - INFO - Generated code: 
+from automation_functions import get_cpu_usage
+
+def main():
+    try:
+        result = get_cpu_usage()
+        if result is not None:
+            print("get_cpu_usage executed successfully. Result: " + str(result))
+        else:
+            print("get_cpu_usage executed successfully.")
+    except Exception as e:
+        print(f"Error executing function: {str(e)}")
+
+if __name__ == "__main__":
+    main()
+

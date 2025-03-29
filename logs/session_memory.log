@@ -1,0 +1,5 @@
+2025-03-29 16:58:10,018 - Interaction: {'prompt': 'open chrome', 'function': 'open_chrome', 'parameters': {}, 'timestamp': '2025-03-29T16:58:10.018429'}
+2025-03-29 16:58:45,680 - Interaction: {'prompt': 'open google chrome', 'function': 'open_chrome', 'parameters': {}, 'timestamp': '2025-03-29T16:58:45.680084'}
+2025-03-29 16:59:16,005 - Interaction: {'prompt': 'open calculator', 'function': 'open_calculator', 'parameters': {}, 'timestamp': '2025-03-29T16:59:16.005781'}
+2025-03-29 17:00:03,267 - Interaction: {'prompt': 'show ram usage', 'function': 'get_ram_usage', 'parameters': {}, 'timestamp': '2025-03-29T17:00:03.267275'}
+2025-03-29 17:00:25,872 - Interaction: {'prompt': 'show cpu usage', 'function': 'get_cpu_usage', 'parameters': {}, 'timestamp': '2025-03-29T17:00:25.872005'}
