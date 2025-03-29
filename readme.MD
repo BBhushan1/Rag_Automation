@@ -1,8 +1,11 @@
-LLM + RAG-Based Function Execution API
-Overview
-This project implements a Python-based API service that dynamically retrieves and executes automation functions using LLM (Large Language Model) and RAG (Retrieval-Augmented Generation) . The system processes user prompts, maps them to predefined automation functions, and generates executable Python code for function invocation.
+**RAG-Based Function Execution API**
 
-The API is built using FastAPI and integrates with FAISS for vector search and Sentence Transformers for embeddings. It supports application control, system monitoring, and command execution tasks.
+#Overview
+This project implements a Python-based API service that dynamically retrieves and executes automation functions using RAG. The system processes user prompts, maps them to 
+predefined automation functions, and generates executable Python code for function invocation.
+
+The API is built using FastAPI and integrates with FAISS for vector search and Sentence Transformers for embeddings. 
+It supports application control, system monitoring, and command execution tasks.
 
 Features
 Function Registry : Predefined automation functions for common tasks like opening applications, retrieving system stats, and running shell commands.
