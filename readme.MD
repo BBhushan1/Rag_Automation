@@ -29,6 +29,7 @@ It supports application control, system monitoring, and command execution tasks.
 1. **Clone the Repository**:
 
    git clone https://github.com/BBhushan1/Rag_Automation
+
    cd <project-directory>
   
 
